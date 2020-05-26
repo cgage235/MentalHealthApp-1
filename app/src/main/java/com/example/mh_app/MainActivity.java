@@ -20,14 +20,14 @@ public class MainActivity extends AppCompatActivity {
         divein.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                moveToActivityTwo();
+                moveToActivityThree();
             }
         });
 
     }
 
-    private  void moveToActivityTwo(){
-        Intent intent=new Intent(MainActivity.this,MH2.class);
+    private  void moveToActivityThree(){
+        Intent intent=new Intent(MainActivity.this,MH3.class);
         startActivity(intent);
     }
 }
