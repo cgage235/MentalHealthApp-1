@@ -9,19 +9,24 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="80dp"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="338dp"
+        android:layout_height="130dp"
+        android:layout_marginBottom="56dp"
         android:layout_marginEnd="100dp"
         android:layout_marginLeft="100dp"
         android:layout_marginRight="100dp"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="532dp"
-        android:text="Button"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/batch"
+        android:textColor="#A163AC"
+        android:textIsSelectable="false"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -33,8 +38,8 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="496dp"
+        android:layout_height="468dp"
         android:layout_marginBottom="137dp"
         android:layout_marginTop="74dp"
         app:layout_constraintBottom_toTopOf="@+id/button"
