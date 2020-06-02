@@ -5,29 +5,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/bgcol">
+    tools:context=".MainActivity">
+<!--   android:background="@drawable/Rec">-->
 
     <Button
         android:id="@+id/DiveIn"
         style="@style/Widget.AppCompat.Button"
-        InParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="84dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginRight="100dp"
         android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="50dp"
         android:background="@drawable/batch"
         android:gravity="bottom"
         android:textColor="#A163AC"
         android:textIsSelectable="false"
         android:textSize="24sp"
         android:textStyle="bold" />
+    <!--        android:InParent="true"-->
 
-     <ImageView
+
+    <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="479dp"
