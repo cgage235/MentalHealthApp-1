@@ -22,14 +22,10 @@ public class MH3 extends AppCompatActivity {
     Button mregin;
     EditText mEmail,mPassword;
     FirebaseAuth fAuth;
-    ProgressBar progressbar;
+  //  ProgressBar progressbar;
 
-    public void onProgress(View view){
 
-        progressbar.setVisibility(View.VISIBLE);
-    }
-
-        @Override
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_m_h3);
@@ -39,8 +35,8 @@ public class MH3 extends AppCompatActivity {
 
         fAuth = FirebaseAuth.getInstance();
 
-        progressbar=(ProgressBar)findViewById(R.id.progressBar);
-        progressbar.setVisibility(View.GONE);
+       // progressbar=(ProgressBar)findViewById(R.id.progressBar);
+       // progressbar.setVisibility(View.GONE);
 
 
         mregin =findViewById(R.id.reg);
