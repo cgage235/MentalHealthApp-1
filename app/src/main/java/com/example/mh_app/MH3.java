@@ -90,7 +90,7 @@ public class MH3 extends AppCompatActivity {
         });
 
     }
-
+    //Check if the user reg is working
     private  void moveToActivityFour(){
         Intent intent=new Intent(MH3.this,MH4.class);
         startActivity(intent);
