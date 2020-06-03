@@ -11,6 +11,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MH2 extends AppCompatActivity {
     Button journal;
+    Button board;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +20,7 @@ public class MH2 extends AppCompatActivity {
 
 
          journal = findViewById(R.id.button3);
+         board=findViewById(R.id.button);
 
 
 
@@ -26,6 +28,13 @@ public class MH2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 moveToActivityFive();
+            }
+        });
+
+        board.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                moveToBoard();
             }
         });
 
@@ -38,6 +47,11 @@ public class MH2 extends AppCompatActivity {
     }
     private  void moveToActivityFive(){
         Intent intent=new Intent(MH2.this,MH5.class);
+        startActivity(intent);
+
+    }
+    private  void moveToBoard(){
+        Intent intent=new Intent(MH2.this,board.class);
         startActivity(intent);
 
     }
