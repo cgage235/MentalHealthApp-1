@@ -73,7 +73,7 @@ public class MH4 extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(MH4.this,"User Created",Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                            startActivity(new Intent(getApplicationContext(),MH2.class));
                         }else{
                             Toast.makeText(MH4.this,"Error : " + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
                         }
