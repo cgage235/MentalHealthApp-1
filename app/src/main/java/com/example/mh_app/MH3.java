@@ -24,7 +24,12 @@ public class MH3 extends AppCompatActivity {
     FirebaseAuth fAuth;
     ProgressBar progressbar;
 
-    @Override
+    public void onProgress(View view){
+
+        progressbar.setVisibility(View.VISIBLE);
+    }
+
+        @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_m_h3);
@@ -33,7 +38,10 @@ public class MH3 extends AppCompatActivity {
         mPassword = findViewById(R.id.password);
 
         fAuth = FirebaseAuth.getInstance();
-        progressbar = findViewById(R.id.progressBar);
+
+        progressbar=(ProgressBar)findViewById(R.id.progressBar);
+        progressbar.setVisibility(View.GONE);
+
 
         mregin =findViewById(R.id.reg);
         msignin =findViewById(R.id.SignIn);
@@ -70,7 +78,7 @@ public class MH3 extends AppCompatActivity {
                     return;
                 }
 
-                progressbar.setVisibility(View.VISIBLE);
+
 
                 //Authenticate the user
 
@@ -91,6 +99,8 @@ public class MH3 extends AppCompatActivity {
 
     }
     //Check if the user reg is working
+
+
     private  void moveToActivityFour(){
         Intent intent=new Intent(MH3.this,MH4.class);
         startActivity(intent);

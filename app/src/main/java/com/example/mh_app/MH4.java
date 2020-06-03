@@ -19,10 +19,20 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MH4 extends AppCompatActivity {
+
     EditText mFirstName,mLastName,mEmail,mPassword;
     Button mRegisterBtn;
     FirebaseAuth fAuth;
+
     ProgressBar progressbar;
+    public void progress (View view){
+        progressbar = findViewById(R.id.progressBar1);
+        progressbar.setVisibility(View.VISIBLE);
+
+    }
+
+   
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +46,6 @@ public class MH4 extends AppCompatActivity {
         mRegisterBtn =  findViewById(R.id.register_button);
 
         fAuth = FirebaseAuth.getInstance();
-        progressbar = findViewById(R.id.progressBar);
 
         if(fAuth.getCurrentUser() != null)
         {  // If the user is already logged in then send the user to the specified page
@@ -64,9 +73,11 @@ public class MH4 extends AppCompatActivity {
                     mPassword.setError("Password must be greater than 6 characters long");
                     return;
                 }
-                progressbar.setVisibility(View.VISIBLE);
+                //progressbar.setVisibility(View.VISIBLE);
 
                 //Register the user
+
+
 
                 fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -83,4 +94,5 @@ public class MH4 extends AppCompatActivity {
             }
         });
     }
+
 }
