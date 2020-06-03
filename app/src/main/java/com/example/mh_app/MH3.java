@@ -21,7 +21,7 @@ public class MH3 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 moveToActivityFour();
-            }
+             }
         });
 
                 buttonSign=(Button)findViewById(R.id.SignIn);
