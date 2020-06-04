@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MH4 extends AppCompatActivity {
 
-    EditText mFirstName,mLastName,mEmail,mPassword;
+    EditText mFirstName,mLastName,mEmail,mPassword,mRetypePassword;
     Button mRegisterBtn;
     FirebaseAuth fAuth;
 
@@ -42,28 +42,29 @@ public class MH4 extends AppCompatActivity {
         mEmail = findViewById(R.id.email);
         mLastName = findViewById(R.id.last_name);
         mPassword = findViewById(R.id.password);
+        mRetypePassword = findViewById(R.id.retype_password);
 
         mRegisterBtn =  findViewById(R.id.register_button);
 
         fAuth = FirebaseAuth.getInstance();
 
-        if(fAuth.getCurrentUser() != null)
-        {  // If the user is already logged in then send the user to the specified page
-            startActivity(new Intent(getApplicationContext(),MainActivity.class));
-            finish();
-        }
+
 
         mRegisterBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String email = mEmail.getText().toString().trim();
                 String password = mPassword.getText().toString().trim();
+                String retype_password = mRetypePassword.getText().toString().trim();
 
                 if(TextUtils.isEmpty(email)){
                     mEmail.setError("Email field cannot be empty");
                     return;
                 }
-
+                if(!password.equals(retype_password))
+                {
+                    mRetypePassword.setError("The passwords don't match");
+                }
                 if(TextUtils.isEmpty(password)){
                     mPassword.setError("Password field cannot be empty");
                     return;

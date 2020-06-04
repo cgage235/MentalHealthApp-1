@@ -1,8 +1,6 @@
 package com.example.mh_app;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -11,73 +9,52 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-
 public class MH3 extends AppCompatActivity {
     Button msignin;
     Button mregin;
-    EditText mEmail,mPassword;
+    EditText Email,Password;
     FirebaseAuth fAuth;
-  //  ProgressBar progressbar;
-
-
+    ProgressBar progressbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_m_h3);
-
-        mEmail = findViewById(R.id.email);
-        mPassword = findViewById(R.id.password);
-
+        Email = findViewById(R.id.Email1);
+        Password = findViewById(R.id.password1);
         fAuth = FirebaseAuth.getInstance();
-
-       // progressbar=(ProgressBar)findViewById(R.id.progressBar);
-       // progressbar.setVisibility(View.GONE);
-
-
+        progressbar = findViewById(R.id.progressBar);
         mregin =findViewById(R.id.reg);
         msignin =findViewById(R.id.SignIn);
-
-
         mregin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 moveToActivityFour();
             }
         });
-
-
-
         msignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-           
-                String email = mEmail.getText().toString().trim();
-                String password = mPassword.getText().toString().trim();
 
+                String email = Email.getText().toString().trim();
+                String password = Password.getText().toString().trim();
                 if(TextUtils.isEmpty(email)){
-                    mEmail.setError("Email field cannot be empty");
+                    Email.setError("Email field cannot be empty");
                     return;
                 }
-
                 if(TextUtils.isEmpty(password)){
-                    mPassword.setError("Password field cannot be empty");
+                    Password.setError("Password field cannot be empty");
                     return;
                 }
-
                 if(password.length() < 6){
-                    mPassword.setError("Password must be greater than 6 characters long");
+                    Password.setError("Password must be greater than 6 characters long");
                     return;
                 }
-
-
-
+                progressbar.setVisibility(View.VISIBLE);
                 //Authenticate the user
-
                 fAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -94,14 +71,10 @@ public class MH3 extends AppCompatActivity {
         });
 
     }
+
     //Check if the user reg is working
-
-
     private  void moveToActivityFour(){
         Intent intent=new Intent(MH3.this,MH4.class);
         startActivity(intent);
-
     }
-
 }
-
