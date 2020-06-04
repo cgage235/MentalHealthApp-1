@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -79,7 +80,6 @@ public class board extends AppCompatActivity {
                 }
             }
         });
-
         mTextViewShowUploads.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -118,10 +118,21 @@ public class board extends AppCompatActivity {
                                 }
                             }, 500);
                             Toast.makeText(board.this, "Upload successful", Toast.LENGTH_LONG).show();
-                            Upload upload = new Upload(mEditTextFileName.getText().toString().trim(),
+                           /* Upload upload = new Upload(mEditTextFileName.getText().toString().trim(),
                                     taskSnapshot.getUploadSessionUri().toString());
                             String uploadId = mDatabaseRef.push().getKey();
+                            mDatabaseRef.child(uploadId).setValue(upload); */
+                            Task<Uri> urlTask = taskSnapshot.getStorage().getDownloadUrl();
+                            while (!urlTask.isSuccessful());
+                            Uri downloadUrl = urlTask.getResult();
+
+                            //Log.d(TAG, "onSuccess: firebase download url: " + downloadUrl.toString()); //use if testing...don't need this line.
+                            Upload upload = new Upload(mEditTextFileName.getText().toString().trim(),downloadUrl.toString());
+
+                            String uploadId = mDatabaseRef.push().getKey();
                             mDatabaseRef.child(uploadId).setValue(upload);
+
+
 
                         }
                     })
@@ -159,4 +170,13 @@ public class board extends AppCompatActivity {
         Intent intent = new Intent(this, ImagesActivity.class);
         startActivity(intent);
     }
-}
+
+
+
+
+
+
+
+
+
+    }
