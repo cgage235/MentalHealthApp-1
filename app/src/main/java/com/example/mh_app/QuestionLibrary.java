@@ -2,22 +2,23 @@ package com.example.mh_app;
 
 public class QuestionLibrary {
     public static  String nQuestions[]={
-            "hello?",
-            "how are you?",
-            "are you sure?",
-            "no way, really?"
+            "Cold weather and snow can kill the new coronavirus.",
+            "The new coronavirus cannot be transmitted through mosquito bites and houseflies.",
+            "Ultra-violet (UV) lamps should be used to disinfect hands or other areas of your skin",
+            "Vaccines against pneumonia protect you against the new coronavirus."
+
 
 
     };
     public static String nChoices[][]={
-            {"hello","not in the mood","adele?!"},
-            {"as good as i can be","still no","is it really adele?"},
-            {"yep","am I ever","oh okay, just normal question,wow -_-"},
-            {"yes wayyy","no man, was defs lying","these are very generic"}
+            {"MYTH","FACT","adele?!"},
+            {"MYTH","FACT","is it really adele?"},
+            {"MYTH","FACT","oh okay, just normal question,wow -_-"},
+            {"MYTH","FACT","these are very generic"}
 
     };
     public static String nCorrectAnswers[]={
-            "hello","still no","yep","yes wayyy"
+            "MYTH","FACT","MYTH","MYTH"
     };
     public String getQuestion(int a) {
         String question= nQuestions[a];

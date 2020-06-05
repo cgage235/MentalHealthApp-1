@@ -36,12 +36,12 @@
 
     <TextView
         android:id="@+id/questions"
-        android:layout_width="wrap_content"
-        android:layout_height="70dp"
+        android:layout_width="match_parent"
+        android:layout_height="94dp"
         android:layout_marginBottom="40dp"
         android:padding="8dp"
-        android:text="Are you okay?"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#2A225D"
         android:textSize="20sp" />
 
     <Button
@@ -49,39 +49,31 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:background="@android:color/holo_purple"
+        android:background="@drawable/mythrec"
         android:padding="8dp"
-        android:text="yes"
-        android:textColor="@android:color/background_light" />
+
+        android:textColor="#B97DC9" />
 
     <Button
         android:id="@+id/choice2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:background="@android:color/holo_purple"
+        android:background="@drawable/mythrec"
         android:padding="8dp"
-        android:text="no"
-        android:textColor="@android:color/background_light" />
 
-    <Button
-        android:id="@+id/choice3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:background="@android:color/holo_purple"
-        android:padding="8dp"
-        android:text="none of your business"
-        android:textColor="@android:color/background_light" />
+
+        android:textColor="#B97DC9" />
+
 
     <Button
         android:id="@+id/Exit_Quiz"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:background="@android:color/background_dark"
+        android:background="@drawable/exit"
         android:padding="8dp"
-        android:text="Exit Quiz"
+
         android:textColor="@android:color/background_light" />
 
 

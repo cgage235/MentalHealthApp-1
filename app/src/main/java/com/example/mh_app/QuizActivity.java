@@ -14,7 +14,7 @@ public class QuizActivity extends AppCompatActivity {
     private TextView mQuestionView;
     private Button mButtonChoice1;
     private Button mButtonChoice2;
-    private Button mButtonChoice3;
+  //  private Button mButtonChoice3;
     private Button mExitButton;
 
     private String mAnswer;
@@ -33,7 +33,7 @@ public class QuizActivity extends AppCompatActivity {
         mQuestionView = (TextView) findViewById(R.id.questions);
         mButtonChoice1 = (Button) findViewById(R.id.choice1);
         mButtonChoice2 = (Button) findViewById(R.id.choice2);
-        mButtonChoice3 = (Button) findViewById(R.id.choice3);
+       // mButtonChoice3 = (Button) findViewById(R.id.choice3);
         mExitButton=(Button)findViewById(R.id.Exit_Quiz);
 
         updateQuestion();
@@ -147,7 +147,7 @@ public class QuizActivity extends AppCompatActivity {
         //end of Button listener button2
 
         //start of Button listener button3
-        mButtonChoice3.setOnClickListener(new View.OnClickListener() {
+       /* mButtonChoice3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //logic for button
@@ -197,7 +197,7 @@ public class QuizActivity extends AppCompatActivity {
 
             }
         });
-
+*/
         //end of Button listener button3
 
         mExitButton.setOnClickListener(new View.OnClickListener (){
@@ -233,7 +233,7 @@ public class QuizActivity extends AppCompatActivity {
         mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
         mButtonChoice1.setText(mQuestionLibrary.getChoice1(mQuestionNumber));
         mButtonChoice2.setText(mQuestionLibrary.getChoice2(mQuestionNumber));
-        mButtonChoice3.setText(mQuestionLibrary.getChoice3(mQuestionNumber));
+       // mButtonChoice3.setText(mQuestionLibrary.getChoice3(mQuestionNumber));
 
         mAnswer=mQuestionLibrary.getCorrectAnswer(mQuestionNumber);
         mQuestionNumber++;
