@@ -8,34 +8,34 @@
     android:paddingTop="16dp"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
-    tools:context=".StartQuizActivity">
+    tools:context=".StartQuizActivity"
+    android:background="@drawable/bgcoltwo">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Myth Buster: COVID Edition"
         android:layout_centerHorizontal="true"
-        android:textAllCaps="true"
-        android:textStyle="bold"
-        android:textSize="30sp"
-        android:padding="10dp"
+        android:background="@drawable/heading"
         android:fontFamily="sans-serif-black"
+        android:padding="10dp"
+        android:textAllCaps="true"
         android:textColor="@color/colorPrimaryDark"
-        android:textColorHighlight="@color/colorAccent"/>
+        android:textColorHighlight="@color/colorAccent"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <Button
+        android:id="@+id/startButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start the Quiz!"
-        android:id="@+id/startButton"
-        android:textStyle="normal"
-        android:textColor="#ffff"
-        android:padding="15dp"
-        android:textSize="20sp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/startquiz"
         android:fontFamily="serif-monospace"
-        android:background="@color/colorPrimary"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"/>
+        android:padding="15dp"
+        android:textColor="#ffff"
+        android:textSize="20sp"
+
+        android:textStyle="normal" />
 
 
 
