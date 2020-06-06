@@ -6,13 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".board">
+    tools:context=".board"
+    android:background="@drawable/bgcolthree">
 
   <Button
       android:id="@+id/button_choose_image"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="Choose file" />
+      android:text="Choose file"
+      />
   <EditText
     android:id="@+id/edit_text_file_name"
     android:layout_width="match_parent"
@@ -26,12 +28,13 @@
 
   <ImageView
       android:id="@+id/image_view"
-      android:layout_width="376dp"
-      android:layout_height="471dp"
+      android:layout_width="441dp"
+      android:layout_height="523dp"
       android:layout_above="@id/progress_bar"
       android:layout_below="@id/edit_text_file_name"
       android:layout_marginBottom="14dp"
-      android:layout_marginTop="16dp" />
+      android:layout_marginTop="22dp"
+      android:background="@drawable/boardimage" />
   <ProgressBar
       android:id="@+id/progress_bar"
       style="@style/Widget.AppCompat.ProgressBar.Horizontal"
@@ -41,12 +44,14 @@
       android:layout_alignParentStart="true"
       android:layout_marginBottom="16dp"
       android:layout_alignParentLeft="true" />
+
   <Button
       android:id="@+id/button_upload"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
+      android:layout_width="100dp"
+      android:layout_height="67dp"
       android:layout_alignParentBottom="true"
       android:layout_centerHorizontal="true"
+
       android:text="Upload" />
   <TextView
       android:id="@+id/text_view_show_uploads"
